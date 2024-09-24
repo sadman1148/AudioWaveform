@@ -25,8 +25,8 @@ class SplashFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
 //            delay(18500L)
             delay(1000L)
-            findNavController(this@SplashFragment).navigate(R.id.action_splashFragment_to_streamFragment)
-//            findNavController(this@SplashFragment).navigate(R.id.action_splashFragment_to_testFragment)
+//            findNavController(this@SplashFragment).navigate(R.id.action_splashFragment_to_streamFragment)
+            findNavController(this@SplashFragment).navigate(R.id.action_splashFragment_to_canvasFragment)
         }
     }
 }

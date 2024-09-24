@@ -74,4 +74,9 @@ dependencies {
     // WaveFormSeekBar | Amplitude
     implementation(libs.waveformseekbar)
     implementation(libs.amplituda)
+
+    // JTransforms
+    implementation(libs.jtransforms)
+    implementation(libs.jlargearrays)
+    implementation(libs.commons.math3)
 }

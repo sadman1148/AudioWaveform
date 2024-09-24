@@ -100,12 +100,18 @@ class StreamFragment : Fragment() {
     private fun getUnsafeOkHttpClient(): OkHttpClient {
         try {
             // Create a trust manager that does not validate certificate chains
-            val trustAllCerts = arrayOf<TrustManager>(object : X509TrustManager {
-                @SuppressLint("TrustAllX509TrustManager")
-                override fun checkClientTrusted(chain: Array<out X509Certificate>?, authType: String?) { }
-                @SuppressLint("TrustAllX509TrustManager")
-                override fun checkServerTrusted(chain: Array<out X509Certificate>?, authType: String?) { }
-                override fun getAcceptedIssuers(): Array<X509Certificate> = arrayOf()
+            val trustAllCerts = arrayOf<TrustManager>(
+
+                @SuppressLint("CustomX509TrustManager")
+                object : X509TrustManager {
+
+                    @SuppressLint("TrustAllX509TrustManager")
+                    override fun checkClientTrusted(chain: Array<out X509Certificate>?, authType: String?) { }
+
+                    @SuppressLint("TrustAllX509TrustManager")
+                    override fun checkServerTrusted(chain: Array<out X509Certificate>?, authType: String?) { }
+
+                    override fun getAcceptedIssuers(): Array<X509Certificate> = arrayOf()
             })
 
             // Install the all-trusting trust manager

@@ -20,20 +20,21 @@
         <action
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true"
-            android:id="@+id/action_splashFragment_to_testFragment"
-            app:destination="@id/testFragment" />
+            android:id="@+id/action_splashFragment_to_canvasFragment"
+            app:destination="@id/canvasFragment" />
 
     </fragment>
+
+    <fragment
+        android:id="@+id/canvasFragment"
+        android:name="com.mpower.dtp.CanvasFragment"
+        android:label="fragment_test"
+        tools:layout="@layout/fragment_canvas" />
 
     <fragment
         android:id="@+id/streamFragment"
         android:name="com.mpower.dtp.StreamFragment"
         android:label="fragment_stream"
         tools:layout="@layout/fragment_stream" />
-    <fragment
-        android:id="@+id/testFragment"
-        android:name="com.mpower.dtp.TestFragment"
-        android:label="fragment_test"
-        tools:layout="@layout/fragment_test" />
 
 </navigation>
